@@ -1,0 +1,28 @@
+Write a function that takes an array of integers and a rotation count as input and rotates the 
+elements of the array to the right by the given rotation count.
+Example:
+Input: [1, 2, 3, 4, 5], rotation Count = 2
+Output: [4, 5, 1, 2, 3]
+Explanation: The array is rotated to the right by 2 positions.
+Note:
+The input array can have any number of elements.
+The rotation count will be positive only
+
+def rotate_array(arr, rotation_count):
+    rotation_count %= len(arr)
+    if rotation_count == 0:
+        return arr
+    rotated_arr = arr[-rotation_count:] + arr[:-rotation_count]    
+    return rotated_arr
+
+Let's test the function with the example
+
+input_array = [1, 2, 3, 4, 5]
+rotation_count = 2
+output_array = rotate_array(input_array, rotation_count)
+print(output_array)
+
+Output:
+
+[4, 5, 1, 2, 3]
+
